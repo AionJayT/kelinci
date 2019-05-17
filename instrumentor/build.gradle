@@ -7,13 +7,13 @@ repositories {
     mavenCentral()
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = 10
+targetCompatibility = 10
 
 dependencies {
-    compile 'args4j:args4j:2.32'    
-    compile group: 'org.ow2.asm', name: 'asm', version: '5.2'
-    compile group: 'commons-io', name: 'commons-io', version: '2.4'
+    compile 'args4j:args4j:2.33'    
+    compile group: 'org.ow2.asm', name: 'asm', version: '6.2.1'
+    compile group: 'commons-io', name: 'commons-io', version: '2.6'
 }
 
 jar {

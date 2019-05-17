@@ -45,6 +45,11 @@ public class Instrumentor {
 		Set<String> skipped = new HashSet<>();
 		
 		for (String cls : inputClasses) {
+			//We skip instrumenting the module-info.class
+			if (cls.equals("module-info.class")) {
+				continue;
+			}
+
 			System.out.println("Instrumenting class: " + cls);
 			InputStream bytecode = classloader.getResourceAsStream(cls);
 			

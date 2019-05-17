@@ -34,11 +34,15 @@ public class Options {
 			inputClasses = new HashSet<>();
 			if (input.endsWith(".class")) {
 				// single class file, has to be a relative path from a directory on the class path
+				System.out.println("Loading class: " + input);
 				inputClasses.add(input);
 			} else if (input.endsWith(".jar")) {
 				// JAR file
+				System.out.println("Loading jar: " + input);
 				JarFileIO.extractJar(input, inputClasses);
-				addToClassPath(input);
+
+				// Not sure why add it, but it blocked the class instrument.
+				//addToClassPath(input);
 			} else {
 				// directory
 				System.out.println("Loading dir: " + input);
